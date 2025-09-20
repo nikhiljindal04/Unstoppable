@@ -10,41 +10,44 @@ const TechnologyCard = ({ title, description, image, reverse }) => {
   useEffect(() => {
     if (!imageRef.current) return;
 
-    // Animate image in from right on scroll down and out to right on scroll up
     gsap.fromTo(
       imageRef.current,
-      { x: 300, opacity: 0 },
+      { x: reverse ? -200 : 200, opacity: 0 },
       {
         x: 0,
         opacity: 1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: imageRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
+          start: "top 85%",
+          end: "bottom 30%",
           scrub: true,
         },
       }
     );
-
-    
-  }, []);
+  }, [reverse]);
 
   return (
-    <div className={`grid md:grid-cols-2 gap-12 items-center ${reverse ? "md:flex-row-reverse" : ""}`}>
+    <div
+      className={`flex flex-col ${
+        reverse ? "md:flex-row-reverse" : "md:flex-row"
+      } items-center gap-y-10 md:gap-x-12`}
+    >
       {/* Text */}
-      <div className={reverse ? "order-2 md:order-1" : ""}>
-        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+      <div className="w-full md:w-1/2 text-center md:text-left">
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400">{description}</p>
+        <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          {description}
+        </p>
       </div>
 
       {/* Image */}
-      <div className={reverse ? "order-1 md:order-2 relative" : "relative"}>
+      <div className="w-full md:w-1/2">
         <div
           ref={imageRef}
-          className="aspect-video h-75 rounded-xl bg-cover bg-center glow-effect"
+          className="w-full aspect-video rounded-xl bg-cover bg-center shadow-lg"
           style={{ backgroundImage: `url(${image})` }}
         />
       </div>

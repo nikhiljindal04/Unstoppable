@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import HeroSection from "../components/preOrder/HeroSection";
 import ConfigPanel from "../components/preOrder/ConfigPanel";
-import { FaBars } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import gsap from "gsap";
 
@@ -28,27 +27,30 @@ export default function PreOrder() {
   }, [panelOpen]);
 
   return (
-    <>
-      <div>
-        <div className="absolute top-0 left-0 w-full z-30 bg-background-dark/90 backdrop-blur-lg">
-          <Navbar />
-        </div>
-        <main className="relative flex flex-1 min-h-screen bg-gradient-to-b from-[#102116] via-[#102116] to-[#151816] text-white text-center overflow-hidden">
-          {/* Hero Section */}
-          <HeroSection />
+    <div>
+    
+      <div className="absolute top-0 left-0 w-full z-30 bg-background-dark/90 backdrop-blur-lg">
+        <Navbar />
+      </div>
 
-          {/* Config Panel */}
-          <ConfigPanel ref={panelRef} onClose={() => setPanelOpen(false)} />
+     
+      <main className="relative flex flex-col min-h-screen bg-gradient-to-b from-[#102116] via-[#102116] to-[#151816] text-white overflow-hidden">
+       
+        <HeroSection />
 
-          {/* Floating Open Button */}
+        
+        <ConfigPanel ref={panelRef} onClose={() => setPanelOpen(false)} />
+
+   
+        {!panelOpen && (
           <button
             onClick={() => setPanelOpen(true)}
-            className="absolute top-11/12 -translate-y-1/2  left-6/12 z-10 p-2.5 px-10  bg-[#13ec5b] rounded-full backdrop-blur-sm text-black font-bold hover:bg-opacity-80 transition-colors shadow-lg cursor-pointer"
+            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 px-6 sm:px-10 py-2.5 bg-[#13ec5b] text-black font-bold rounded-full shadow-lg backdrop-blur-sm hover:bg-opacity-80 transition-colors z-20"
           >
             Pre Order Now
           </button>
-        </main>
-      </div>
-    </>
+        )}
+      </main>
+    </div>
   );
 }

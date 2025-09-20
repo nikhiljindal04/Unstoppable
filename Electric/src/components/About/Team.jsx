@@ -22,27 +22,28 @@ const teamMembers = [
   },
 ];
 
+
+
 export default function Team() {
   return (
-    <section id="team">
-      <h3 className="text-2xl text-[#13ec5b] sm:text-3xl text-center font-bold text-primary mb-8">
+    <section className="space-y-8">
+      <h3 className="text-2xl sm:text-3xl md:text-4xl text-center text-[#13ec5b] font-bold mb-8">
         Meet the Team
       </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
         {teamMembers.map((member, i) => (
-          <div key={i} className="flex flex-col items-center gap-4 text-center">
+          <div key={i} className="flex flex-col items-center gap-4 text-center px-4 sm:px-2">
             <div
-              className="h-32 w-32 rounded-full bg-cover bg-center"
+              className="h-32 w-32 sm:h-36 sm:w-36 lg:h-40 lg:w-40 rounded-full bg-cover bg-center"
               style={{ backgroundImage: `url(${member.image})` }}
             />
-            <div>
-              <p className="font-bold text-gray-900 dark:text-white">{member.name}</p>
-              <p className="text-sm font-medium text-primary">{member.role}</p>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{member.desc}</p>
-            </div>
+            <p className="font-bold text-gray-900 dark:text-white">{member.name}</p>
+            <p className="text-sm sm:text-base font-medium text-primary">{member.role}</p>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">{member.desc}</p>
           </div>
         ))}
       </div>
     </section>
   );
 }
+

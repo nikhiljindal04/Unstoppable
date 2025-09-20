@@ -1,10 +1,14 @@
-import React from "react";
-import { FaSearch } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
-    <header className="sticky top-0 z-50 h-16 flex items-center justify-between whitespace-nowrap border-b border-black/10 dark:border-white/10 bg-background-dark/90 backdrop-blur-lg px-6">
+    <header className="sticky top-0 z-50 h-16 flex items-center justify-between border-b border-black/10 dark:border-white/10 bg-background-dark md:bg-background-dark/90 backdrop-blur-lg px-6">
       {/* Logo */}
       <div
         className="flex items-center gap-2 text-white cursor-pointer hover:text-primary transition-colors"
@@ -24,7 +28,7 @@ export default function Navbar() {
         <h2 className="text-lg font-bold">Electra</h2>
       </div>
 
-      {/* Nav Links */}
+      {/* Desktop Nav */}
       <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
         <Link className="hover:text-primary transition-colors" to="/explore">
           Explore
@@ -52,18 +56,78 @@ export default function Navbar() {
       {/* Actions */}
       <div className="flex items-center gap-2">
         <Link
-          className="flex h-9 items-center justify-center rounded-md bg-[#13ec5b] px-4 text-sm font-bold text-black transition-opacity cursor-pointer hover:opacity-90"
+          className="hidden md:flex h-9 items-center justify-center rounded-md bg-[#13ec5b] px-4 text-sm font-bold text-black transition-opacity cursor-pointer hover:opacity-90"
           to="/preorder"
         >
           Pre Order Now
         </Link>
         <Link
           className="flex h-9 w-9 items-center justify-center rounded-md bg-white/10 text-gray-200 transition-colors hover:bg-white/20"
-          to="/search"
+          to="/"
         >
           <FaSearch className="text-lg" />
         </Link>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden flex h-9 w-9 items-center justify-center rounded-md bg-white/10 text-gray-200 hover:bg-white/20"
+          onClick={toggleMenu}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
+
+      {/* Mobile Nav (Dropdown) */}
+      {menuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-[#102116] md:bg-background-dark/95 backdrop-blur-lg flex flex-col items-center gap-4 py-6 text-gray-300 text-lg font-medium md:hidden">
+          {" "}
+          <Link
+            className="hover:text-primary"
+            to="/explore"
+            onClick={toggleMenu}
+          >
+            Explore
+          </Link>
+          <Link
+            className="hover:text-primary"
+            to="/features"
+            onClick={toggleMenu}
+          >
+            Features
+          </Link>
+          <Link
+            className="hover:text-primary"
+            to="/driving-experience"
+            onClick={toggleMenu}
+          >
+            Driving Experience
+          </Link>
+          <Link
+            className="hover:text-primary"
+            to="/technology"
+            onClick={toggleMenu}
+          >
+            Technology
+          </Link>
+          <Link
+            className="hover:text-primary"
+            to="/contact"
+            onClick={toggleMenu}
+          >
+            Contact
+          </Link>
+          <Link className="hover:text-primary" to="/about" onClick={toggleMenu}>
+            About
+          </Link>
+          <Link
+            className="flex h-10 items-center justify-center rounded-md bg-[#13ec5b] px-6 text-sm font-bold text-black hover:opacity-90"
+            to="/preorder"
+            onClick={toggleMenu}
+          >
+            Pre Order Now
+          </Link>
+        </div>
+      )}
     </header>
   );
 }

@@ -7,10 +7,9 @@ export default function Contact() {
     <>
       <div>
         <div className="flex flex-col flex-items-center min-h-screen bg-gradient-to-b from-[#102116] via-[#102116] to-[#151816] text-white text-center">
-        <Navbar />
+          <Navbar />
           <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Left Side: Form & Info */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 px-20">
               <div className="space-y-8">
                 <div>
                   <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -22,14 +21,11 @@ export default function Contact() {
                   </p>
                 </div>
 
-                {/* Contact Form */}
                 <ContactForm />
 
-                {/* Contact Info */}
                 <ContactInfo />
               </div>
 
-              {/* Right Side: Map */}
               <div className="lg:sticky lg:top-32 self-start">
                 <div className="aspect-[16/12] w-full">
                   <iframe

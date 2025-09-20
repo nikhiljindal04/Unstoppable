@@ -8,7 +8,7 @@ const Technology = () => {
     <div>
       <div className="flex flex-col flex-items-center min-h-screen bg-gradient-to-b from-[#102116] via-[#102116] to-[#151816] text-white text-center ">
       <Navbar />
-      <div className="overflow-hidden">
+      <div className="overflow-hidden lg:mx-25">
         <main className="pt-0">
           <TechnologySection />
         </main>
