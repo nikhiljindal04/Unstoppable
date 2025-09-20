@@ -41,6 +41,9 @@ export default function Navbar() {
     <Link className="hover:text-primary transition-colors" to="/contact">
       Contact
     </Link>
+    <Link className="hover:text-primary transition-colors" to="/about">
+      About
+    </Link>
   </nav>
 
   {/* Actions */}

@@ -1,12 +1,103 @@
-# React + Vite
+# ⚡ Electra - Electric Vehicle Showcase Website  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Electra is a modern **React + Tailwind CSS** web application that showcases electric vehicles and their cutting-edge features.  
+It delivers an **engaging, interactive, and sustainable-focused experience** powered by **GSAP animations** and a clean design system.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features  
 
-## Expanding the ESLint configuration
+🏠 **Interactive Home Page (Home.jsx)**
+- Hero video showcase with GSAP-powered animations  
+- Carbon calculator for environmental impact  
+- Emissions comparison with visual insights  
+- Key vehicle details and highlights  
+- 🌍 Carbon footprint calculator to measure user-specific impact  
+  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🚘 Vehicle Exploration (`Explore.jsx`)  
+- Interactive model carousel  
+- Detailed vehicle cards  
+- Built-in pagination system  
+
+### ⚙️ Key Features (`Features.jsx`)  
+- Performance specifications  
+- Safety features  
+- Connectivity options  
+- Comfort amenities  
+
+### 🔋 Technology Showcase (`Technology.jsx`)  
+- Battery innovation  
+- Autonomous driving  
+- Infotainment systems  
+- Safety technology  
+
+### 🛣️ Driving Experience (`DrivingExperience.jsx`)  
+- Interactive feature demonstrations  
+- Environment-specific capabilities  
+- Performance metrics  
+
+### 🛒 Pre-Order System (`PreOrder.jsx`)  
+- Vehicle configuration panel  
+- Color and wheel selection  
+- Order summary  
+
+### ℹ️ About Section (`About.jsx`)  
+- Company **Mission & Vision**  
+- Team information  
+- Environmental impact  
+
+### 📞 Contact Page (`Contact.jsx`)  
+- Contact form  
+- Location map  
+- Contact information  
+
+---
+
+## 🛠️ Technical Stack  
+
+- **Framework**: [React](https://react.dev/) (with Vite)  
+- **Routing**: [React Router DOM](https://reactrouter.com/)  
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)  
+- **Animations**: [GSAP](https://gsap.com/)  
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)  
+- **Development Tools**: ESLint  
+
+---
+
+## 📂 Project Structure  
+
+src/
+├── components/ # Reusable UI components
+│ ├── Navbar.jsx
+│ ├── Footer.jsx
+│ ├── Carousel.jsx
+│ ├── CarbonCalculator.jsx
+│ ├── ConfigPanel.jsx
+│ ├── ModelCard.jsx
+│ ├── TechnologyCard.jsx
+│ ├── DetailsCard.jsx
+│ ├── EmissionsComparison.jsx
+│ └── ...
+├── pages/ # Main pages
+│ ├── Home.jsx
+│ ├── Explore.jsx
+│ ├── Features.jsx
+│ ├── Technology.jsx
+│ ├── DrivingExperience.jsx
+│ ├── PreOrder.jsx
+│ ├── About.jsx
+│ └── Contact.jsx
+└── App.jsx # Routing setup
+
+
+---
+
+## 🚀 Getting Started  
+
+### 🔧 Installation  
+
+Clone the repository:  
+```bash
+git clone https://github.com/yourusername/electra.git
+cd electra

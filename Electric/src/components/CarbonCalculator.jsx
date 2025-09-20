@@ -81,7 +81,7 @@ export default function CarbonCalculator() {
         <div className="pt-4">
           <button
             onClick={calculateSavings}
-            className="w-full flex justify-center py-3 px-4 border border-transparent bg-[#13ec5b] rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 transform hover:scale-105"
+            className="w-full flex justify-center py-3 px-4 border border-transparent bg-[#13ec5b] rounded-lg shadow-sm text-sm font-stretch-50% font-bold text-black bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 transform hover:scale-105"
           >
             Calculate Savings
           </button>

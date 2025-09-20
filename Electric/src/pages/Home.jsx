@@ -67,7 +67,6 @@ const Home = () => {
 
   return (
     <div className="relative bg-gradient-to-b from-[#102116] via-[#102116] to-[#151816] text-white text-center">
-      =
       <Navbar />
       <div className="overflow-x-hidden pt-1">
         <div className="flex flex-col text-center p-6">

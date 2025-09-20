@@ -6,6 +6,7 @@ import Technology from "./pages/Technology";
 import PreOrder from "./pages/PreOrder";
 import Features from "./pages/Features";
 import DrivinngExperience from "./pages/DrivingExperience";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/technology" element={<Technology />} />
       <Route path="/preorder" element={<PreOrder />} />
+      <Route path="/about" element={<About />} />
 
 
     </Routes>

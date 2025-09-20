@@ -43,7 +43,7 @@ export default function PreOrder() {
           {/* Floating Open Button */}
           <button
             onClick={() => setPanelOpen(true)}
-            className="absolute top-11/12 -translate-y-1/2  left-6/12 z-10 p-2.5 px-10  bg-[#13ec5b] rounded-full backdrop-blur-sm text-white hover:bg-opacity-80 transition-colors shadow-lg cursor-pointer"
+            className="absolute top-11/12 -translate-y-1/2  left-6/12 z-10 p-2.5 px-10  bg-[#13ec5b] rounded-full backdrop-blur-sm text-black font-bold hover:bg-opacity-80 transition-colors shadow-lg cursor-pointer"
           >
             Pre Order Now
           </button>
